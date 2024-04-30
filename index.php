@@ -19,7 +19,7 @@
 </html>
 
 <?php
-  $x = $_GET['X'];
+  $X = $_GET['X'];
   $Y = $_GET['Y'];
   $Z = $_GET['Z'];
   $total = null;
@@ -27,7 +27,8 @@
   // $total = abs($x);
   // $total = round($x);
   // $total = floor($x);
-  $total = ceil($x);
+  // $total = ceil($x);
+  $total = pow($X, $Y);
   echo $total;
 
 ?>
