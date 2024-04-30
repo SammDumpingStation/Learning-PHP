@@ -28,7 +28,7 @@
   // $total = round($x);
   // $total = floor($x);
   // $total = ceil($x);
-  $total = pow($X, $Y);
+  $total = sqrt($Y);
   echo $total;
 
 ?>
