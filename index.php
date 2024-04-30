@@ -6,39 +6,17 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="index.php" method="post">
-    <label for="">Username:</label><br>
-    <input type="text" name="username"> <br>
-    <label for="">Password</label> <br>
-    <input type="password" name="password"><br>
-    <input type="submit" value="Log in" name="login">
+  <form action="index.php" method="get">
+    <input type="radio" name="credit_card" value="VISA"> VISA <br>
+    <input type="radio" name="credit_card" value="MasterCard"> MasterCard <br>
+    <input type="radio" name="credit_card" value="American Express"> American Express <br>
+    <input type="submit" name="submit" value="submit">
   </form>
 </body>
 </html>
 
 <?php
-  // foreach ($_POST as $key => $value) {
-  //   echo "{$key} = {$value} <br>";
-  // }
-
-  if (isset($_POST['login'])) {
-      $username = $_POST['username'];
-      $password = $_POST['password'];
-      if (empty($username)) {
-        echo"You have not typed in your username. <br>";
-      }
-      else {
-        echo "Username: {$username} <br>";
-      }
-      if (empty($password)) {
-        echo "You have not typed in your password <br>";
-      }
-      else {
-        echo "Password: {$password} <br>";
-      }
-      if (!empty($username) && !empty($password)) {
-        echo"Log-in = {$_POST['login']} <br>";
-        echo "Welcome User!";
-      }
-  }
+    if (isset($_GET['submit'])) {
+        echo"You have selected: {$_GET["credit_card"]}";
+    }
 ?>
