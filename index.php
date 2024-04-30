@@ -24,7 +24,8 @@
   $Z = $_GET['Z'];
   $total = null;
 
-  $total = abs($x);
+  // $total = abs($x);
+  $total = round($x);
   echo $total;
 
 ?>
