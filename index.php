@@ -29,7 +29,9 @@
   // $total = floor($x);
   // $total = ceil($x);
   // $total = sqrt($Y);
-  $total = max($X, $Y, $Z);
+  // $total = max($X, $Y, $Z);
+  $total = min($X, $Y, $Z);
+
   echo $total;
 
 ?>
