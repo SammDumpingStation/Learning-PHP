@@ -17,19 +17,28 @@
 </html>
 
 <?php
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+  // foreach ($_POST as $key => $value) {
+  //   echo "{$key} = {$value} <br>";
+  // }
 
-  if (empty($username)) {
-    echo "You have not entered a username. <br>";
-  }
-  else {
-    echo "Username: {$username} <br>";
-  }
-  if (empty($password)) {
-    echo "You have not entered a password <br>";
-  } 
-  else {
-    echo "Password: {$password} <br>";
+  if (isset($_POST['login'])) {
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      if (empty($username)) {
+        echo"You have not typed in your username. <br>";
+      }
+      else {
+        echo "Username: {$username} <br>";
+      }
+      if (empty($password)) {
+        echo "You have not typed in your password <br>";
+      }
+      else {
+        echo "Password: {$password} <br>";
+      }
+      if (!empty($username) && !empty($password)) {
+        echo"Log-in = {$_POST['login']} <br>";
+        echo "Welcome User!";
+      }
   }
 ?>
