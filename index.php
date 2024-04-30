@@ -7,17 +7,18 @@
 </head>
 <body>
   <form action="index.php" method="post">
-    <label for="">Username: </label> <br>
-    <input type="text" name="username"> <br>
-    <label for="">Password: </label> <br>
-    <input type="password" name="password"> <br>
-    <input type="submit" value="Log-in"> 
+    <label for="">Quantity: </label> <br>
+    <input type="text" name="quantity"> <br>
+    <input type="submit" value="Total">
   </form>
 </body>
 </html>
 
-<?php
-  echo"{$_POST['username']} <br>";
-  echo"{$_POST['password']} <br>";
+<?php 
+  $price = 5.99;
+  $quant = $_POST['quantity'];
+  $total = $price * $quant;
 
+  echo"You have ordered {$quant} xa of Pizza/s <br>";
+  echo"Your total is: \${$total}";
 ?>
