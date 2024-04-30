@@ -7,20 +7,18 @@
 </head>
 <body>
   <form action="index.php" method="get">
-    <label for="">Radius:</label>
-    <input type="text" name="radius">
-    <input type="submit" value="Calculate">
+    <label for="">Select a Number</label> <br>
+    <input type="text" name="number"> <br><br>
+    <input type="submit" value="Multiply"> <br>
   </form>
 </body>
 </html>
 
 <?php 
-  $radius = $_GET['radius'];
-  $circumference =  round(2 * (pi() * $radius), 2) ;
-  $area = round(pi() * ($radius ** 2), 2) ;
-  $volume = round(4/3 * (pi() * ($radius ** 3)), 2) ;
-
-  echo"Circumference: {$circumference}cm <br>";
-  echo"Area: {$area}cm^2 <br>";
-  echo"Volume: {$volume}cm^3 <br>";
+  $number = $_GET['number'];
+  for ($i=0; $i <= 10; $i++) { 
+    $total = $number * $i;
+    echo "{$number} x {$i} = {$total} <br>";
+  }
+  echo "Multiplication Table of {$number}!!";
 ?>
