@@ -7,31 +7,20 @@
 </head>
 <body>
   <form action="index.php" method="get">
-    <label>X:</label> 
-    <input type="text" name="X"><br>
-    <label>Y:</label>
-    <input type="text" name="Y"><br>
-    <label>Z:</label>
-    <input type="text" name="Z"><br>
+    <label for="">Radius:</label>
+    <input type="text" name="radius">
     <input type="submit" value="Calculate">
   </form>
 </body>
 </html>
 
-<?php
-  $X = $_GET['X'];
-  $Y = $_GET['Y'];
-  $Z = $_GET['Z'];
-  $total = null;
+<?php 
+  $radius = $_GET['radius'];
+  $circumference =  round(2 * (pi() * $radius), 2) ;
+  $area = round(pi() * ($radius ** 2), 2) ;
+  $volume = round(4/3 * (pi() * ($radius ** 3)), 2) ;
 
-  // $total = abs($x);
-  // $total = round($x);
-  // $total = floor($x);
-  // $total = ceil($x);
-  // $total = sqrt($Y);
-  // $total = max($X, $Y, $Z);
-  // $total = min($X, $Y, $Z);
-  $total = pi();
-  echo $total;
-
+  echo"Circumference: {$circumference}cm <br>";
+  echo"Area: {$area}cm^2 <br>";
+  echo"Volume: {$volume}cm^3 <br>";
 ?>
