@@ -25,7 +25,8 @@
   $total = null;
 
   // $total = abs($x);
-  $total = round($x);
+  // $total = round($x);
+  $total = floor($x);
   echo $total;
 
 ?>
