@@ -1,34 +1,3 @@
-<?php
-  $name = 'Samm';
-  $food = 'Pizza';
-  $email = 'sammaag@gmail.com';
-
-  $age = 21;
-  $users = 2;
-  $quant = 3;
-
-  $gpa = 1.5;
-
-  $total = null;
-
-  // String Variables
-  echo"I Like {$food}! <br>";
-  echo"I am {$name} <br>";
-  echo"My Email is {$email} <br>";
-
-  // Integer Variables
-  echo"I am {$age} years old <br>";
-  echo"There are {$users} online users <br>";
-  echo"There are {$quant}  available. Would you like to purchase?<br>";
-
-  // Float Variables
-  echo"I averaged {$gpa} this school year <br>";
-
-  // Arithmetic Operation
-  echo"You have purchased {$quant} x {$food}'s <br>";
-  $total = $quant * $users;
-  echo"Your total is {$quant} x {$users} = \${$total}";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +6,18 @@
   <title>Document</title>
 </head>
 <body>
-  <br>
-  <button>Order Pizza</button>
+  <form action="index.php" method="get">
+    <label for="">Username: </label> <br>
+    <input type="text" name="username"> <br>
+    <label for="">Password: </label> <br>
+    <input type="password" name="password"> <br>
+    <input type="submit" value="Log-in"> 
+  </form>
 </body>
 </html>
+
+<?php
+  echo"{$_GET['username']} <br>";
+  echo"{$_GET['password']} <br>";
+
+?>
