@@ -28,7 +28,8 @@
   // $total = round($x);
   // $total = floor($x);
   // $total = ceil($x);
-  $total = sqrt($Y);
+  // $total = sqrt($Y);
+  $total = max($X, $Y, $Z);
   echo $total;
 
 ?>
