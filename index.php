@@ -23,41 +23,27 @@
   for ($i=0; $i <= $binaryLength; $i++) {
     $bit = $binary[$i];
     if ($binaryLength < 8) {
-      echo "You entered {$binaryLength} amount of number which is LESS than to make a binary unit. Please try again!";
+      echo "You entered <strong>{$binaryLength}</strong> amount of number which is <strong> LESS </strong>than to make a binary unit. Please try again! <br>";
+      $decimal = 0;
+      break;
     }
     elseif ($binaryLength > 8) {
-      echo "You entered {$binaryLength} amount of number which is MORE than to make a binary unit. Please try again!";
-    } 
-    elseif($binaryLength == 8) {
-      if ($i == 0 && $bit == 1) {
-        $value = 128;
-      }
-      elseif ($i == 1 && $bit == 1) {
-        $value = 64;
-      }
-      elseif ($i == 2 && $bit == 1) {
-        $value = 32;
-      }
-      elseif ($i == 3 && $bit == 1) {
-        $value = 16;
-      }
-      elseif ($i == 4 && $bit == 1) {
-        $value = 8;
-      }
-      elseif ($i == 5 && $bit == 1) {
-        $value = 4;
-      }
-      elseif ($i == 6 && $bit == 1) {
-        $value = 2;
-      }
-      elseif ($i == 7 && $bit == 1) {
-        $value = 1;
-      }
-      else {
-        $value = 0;
-      }
-      
-    }$decimal+=$value;
+      echo "You entered <strong>{$binaryLength}</strong> amount of number which  is <strong>MORE</strong> than to make a binary unit. Please try again!<br>";
+      $decimal = 0;
+      break;
+    }
+    elseif ($binaryLength == 8 && $bit == 1) {
+      $value = pow(2, 7 - $i);
+    }
+    elseif ($bit > 0 && $bit > 1) {
+      echo "That was not a binary input. Please try again!<br>";
+      $decimal*=0;
+      break;      
+    }
+    else {
+      $value = 0;
+    }
+    $decimal+=$value; 
   }
   echo"The decimal version is: {$decimal}";
 ?>
