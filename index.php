@@ -17,6 +17,11 @@
 
 <?php
     if (isset($_GET['submit'])) {
+      if (empty($_GET['credit_card'])) {
+        echo "Please select your credit card";
+      }
+      else {
         echo"You have selected: {$_GET["credit_card"]}";
+      }
     }
 ?>
