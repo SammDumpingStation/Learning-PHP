@@ -30,8 +30,8 @@
   // $total = ceil($x);
   // $total = sqrt($Y);
   // $total = max($X, $Y, $Z);
-  $total = min($X, $Y, $Z);
-
+  // $total = min($X, $Y, $Z);
+  $total = pi();
   echo $total;
 
 ?>
