@@ -7,8 +7,8 @@
 </head>
 <body>
   <form action="index.php" method="get">
-    <label for="">Input any Sentence</label><br>
-    <input type="text" name="sentence"><br>
+    <label for="">Input any Number</label><br>
+    <input type="text" name="number"><br>
     <input type="submit" name="submit" value="Submit">
 
   </form>
@@ -16,7 +16,15 @@
 </html>
 
 <?php
-  $sentence = $_GET['sentence'];
-  $wordCounter =str_word_count($sentence) ;
-  echo "Your sentence consists of {$wordCounter} words.";
+  $number = $_GET['number'];
+
+  if ($number == 0) {
+    echo "Your number is zero";
+  }
+  elseif ($number > 0) {
+    echo "Your number is positive";
+  }
+  else {
+    echo "Your number is negative";
+  }
 ?>
