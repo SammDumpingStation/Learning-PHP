@@ -7,21 +7,25 @@
 </head>
 <body>
   <form action="index.php" method="get">
-    <input type="radio" name="credit_card" value="VISA"> VISA <br>
-    <input type="radio" name="credit_card" value="MasterCard"> MasterCard <br>
-    <input type="radio" name="credit_card" value="American Express"> American Express <br>
-    <input type="submit" name="submit" value="submit">
+    <label for="">Input any Number</label><br>
+    <input type="text" name="number"><br>
+    <input type="submit" name="submit" value="Submit">
+
   </form>
 </body>
 </html>
 
 <?php
-    if (isset($_GET['submit'])) {
-      if (empty($_GET['credit_card'])) {
-        echo "Please select your credit card";
-      }
-      else {
-        echo"You have selected: {$_GET["credit_card"]}";
-      }
-    }
+  $number = $_GET['number'];
+
+  if ($number == 0) {
+    echo "Your number is zero, Please try again";
+  }
+  elseif ($number % 2 == 0) {
+    echo "Your number is even";
+  }
+  else {
+    echo "Your number is odd";
+  }
+
 ?>
