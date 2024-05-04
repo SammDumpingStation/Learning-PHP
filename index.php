@@ -7,8 +7,8 @@
 </head>
 <body>
   <form action="index.php" method="get">
-    <label for="">Input any String</label><br>
-    <input type="text" name="string"><br>
+    <label for="">Input any Sentence</label><br>
+    <input type="text" name="sentence"><br>
     <input type="submit" name="submit" value="Submit">
 
   </form>
@@ -16,7 +16,7 @@
 </html>
 
 <?php
-  $string = $_GET['string'];
-  $stringLength = strlen($string);
-  echo "Your string consists of {$stringLength} letters.";
+  $sentence = $_GET['sentence'];
+  $wordCounter =str_word_count($sentence) ;
+  echo "Your sentence consists of {$wordCounter} words.";
 ?>
