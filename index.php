@@ -7,8 +7,8 @@
 </head>
 <body>
   <form action="index.php" method="get">
-    <label for="">Input any Number</label><br>
-    <input type="text" name="number"><br>
+    <label for="">Input any String</label><br>
+    <input type="text" name="string"><br>
     <input type="submit" name="submit" value="Submit">
 
   </form>
@@ -16,16 +16,7 @@
 </html>
 
 <?php
-  $number = $_GET['number'];
-
-  if ($number == 0) {
-    echo "Your number is zero, Please try again";
-  }
-  elseif ($number % 2 == 0) {
-    echo "Your number is even";
-  }
-  else {
-    echo "Your number is odd";
-  }
-
+  $string = $_GET['string'];
+  $stringLength = strlen($string);
+  echo "Your string consists of {$stringLength} letters.";
 ?>
