@@ -10,9 +10,20 @@
   <title>Document</title>
 </head>
 <body>
-    <?php
-      $pet01 = new Pet();
-      echo $pet01->petOwner();
-    ?>
+    <form action="index.php" method="get">
+      <label for="">Name</label> <br>
+      <input type="text" placeholder="Name" name="name"> <br>
+      <label for="">Age</label> <br>
+      <input type="text" placeholder="Age" name="age"> <br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
 </body>
 </html>
+
+<?php
+  $name = $_GET['name'];
+  $age = $_GET['age'];
+
+  $greetings = new Greetings();
+  echo $greetings->greetUser($name, $age);
+?>
