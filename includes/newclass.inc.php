@@ -1,10 +1,14 @@
 <?php 
   class Number {
     protected $num;
+
+    public function __construct($number)
+    {
+      $this->num = $number;
+    }
   }
   class OddOrEven extends Number {
-    public function oddOrEven($num) {
-      $this->num = $num;
+    public function oddOrEven() {
       $number = $this->num;
       $type = null;
 
@@ -22,8 +26,7 @@
   }
 
   class MultiplicationTable extends Number {
-    public function multiTable($num) {
-      $this->num = $num;
+    public function multiTable() {
       $numbers = $this->num;
 
       for ($i=0; $i <= 10; $i++) { 

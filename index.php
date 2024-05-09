@@ -21,11 +21,11 @@
 <?php
   $number = $_GET['number'];
 
-  $oddOrEven = new OddOrEven();
-  echo $oddOrEven->oddOrEven($number) . "<br> <br>";
+  $oddOrEven = new OddOrEven($number);
+  echo $oddOrEven->oddOrEven() . "<br> <br>";
 
-  $timeTable = new MultiplicationTable();
+  $timeTable = new MultiplicationTable($number);
   echo "--------------<strong>Multiplication Table</strong>--------------<br><br>";
-  $timeTable->multiTable($number);
+  $timeTable->multiTable();
 
 ?>
