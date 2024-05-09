@@ -21,8 +21,11 @@
 <?php
   $number = $_GET['number'];
 
-  if (isset($_GET['submit'])) {
-    $oddOrEven = new OddOrEven();
-    echo $oddOrEven->oddOrEven($number);
-  }
+  $oddOrEven = new OddOrEven();
+  echo $oddOrEven->oddOrEven($number) . "<br> <br>";
+
+  $timeTable = new MultiplicationTable();
+  echo "--------------<strong>Multiplication Table</strong>--------------<br><br>";
+  $timeTable->multiTable($number);
+
 ?>

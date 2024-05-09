@@ -20,4 +20,16 @@
       return "Your number is: " . $number . $type;
     }
   }
+
+  class MultiplicationTable extends Number {
+    public function multiTable($num) {
+      $this->num = $num;
+      $numbers = $this->num;
+
+      for ($i=0; $i <= 10; $i++) { 
+        $product = $i * $numbers;
+        echo "{$i} * {$numbers} = {$product} <br>";
+      }
+    }
+  }
 ?>
