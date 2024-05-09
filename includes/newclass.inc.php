@@ -1,15 +1,21 @@
-<?php
-  class User {
-    protected $name;
-    protected $age;
-  }
+<?php 
+  class Number {
+    private $num;
+    public function oddOrEven($num) {
+      $this->num = $num;
+      $number = $this->num;
+      $type = null;
 
-  class Greetings extends User {
-    public function greetUser($name, $age) {
-      $this->name = $name;
-      $this->age = $age;
-
-      return "Hello there. You are " . $this->name . " " . ". And you are " . $this->age . " years old.";
+      if ($number == 0) {
+        $type = ". That is a 0.";
+      }
+      elseif ($number % 2 == 0) {
+        $type = ". That is an <strong>EVEN</strong> number";
+      }
+      else {
+        $type = ". That is an <strong>ODD</strong> number";
+      }
+      return "Your number is: " . $number . $type;
     }
   }
 ?>

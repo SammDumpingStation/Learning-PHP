@@ -11,19 +11,18 @@
 </head>
 <body>
     <form action="index.php" method="get">
-      <label for="">Name</label> <br>
-      <input type="text" placeholder="Name" name="name"> <br>
-      <label for="">Age</label> <br>
-      <input type="text" placeholder="Age" name="age"> <br>
+      <label for="">Type a Number</label> <br>
+      <input type="text" placeholder="Number" name="number"> <br>
       <input type="submit" name="submit" value="Submit">
     </form>
 </body>
 </html>
 
 <?php
-  $name = $_GET['name'];
-  $age = $_GET['age'];
+  $number = $_GET['number'];
 
-  $greetings = new Greetings();
-  echo $greetings->greetUser($name, $age);
+  if (isset($_GET['submit'])) {
+    $oddOrEven = new Number();
+    echo $oddOrEven->oddOrEven($number);
+  }
 ?>
