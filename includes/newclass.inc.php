@@ -1,6 +1,8 @@
 <?php 
   class Number {
-    private $num;
+    protected $num;
+  }
+  class OddOrEven extends Number {
     public function oddOrEven($num) {
       $this->num = $num;
       $number = $this->num;

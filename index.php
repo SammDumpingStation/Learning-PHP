@@ -22,7 +22,7 @@
   $number = $_GET['number'];
 
   if (isset($_GET['submit'])) {
-    $oddOrEven = new Number();
+    $oddOrEven = new OddOrEven();
     echo $oddOrEven->oddOrEven($number);
   }
 ?>
