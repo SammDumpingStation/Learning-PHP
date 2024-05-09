@@ -2,8 +2,8 @@
 <?php
 
 class Person {
-  private $first = "Samm";
-  private $last = 'Cagbay';
+  protected $first = "Samm";
+  protected $last = 'Cagbay';
   private $age = "21";
 
   public function greetUser() {
@@ -15,10 +15,14 @@ class Person {
   }
 }
 
-class Pet {
-  public function owner(){
-    $a = "Yahoo There!";
-    return $a;
+class Pet extends Person{
+  function petOwner(){
+    $fName = $this->first;
+    $lName = $this->last;
+    $ownerName = "{$fName} {$lName}";
+    $petName = 'Cream';
+    $ownerGreet = "Hi I am {$petName}, and my owners name is {$ownerName}"; 
+    return $ownerGreet;
   }
 }
 ?>

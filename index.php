@@ -11,8 +11,8 @@
 </head>
 <body>
     <?php
-      $pet01 = new Person();
-      echo $pet01->greetUser();
+      $pet01 = new Pet();
+      echo $pet01->petOwner();
     ?>
 </body>
 </html>
