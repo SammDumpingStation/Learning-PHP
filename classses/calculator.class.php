@@ -1,2 +1,5 @@
 <?php
+  class Calculator {
+    
+  }
 ?>
