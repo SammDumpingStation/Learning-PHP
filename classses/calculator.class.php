@@ -1,10 +1,10 @@
 <?php
   class Calculator {
-    private $firstNumber;
+    public $firstNumber;
     private $secondNumber;
     private $operation;
 
-    public function __construct($first, $second, $operation){
+    public function __construct(int $first, int $second, string $operation){
       $this->firstNumber = $first;
       $this->secondNumber = $second;
       $this->operation = $operation;

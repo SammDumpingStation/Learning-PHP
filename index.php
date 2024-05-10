@@ -11,10 +11,11 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="classses/calculator.class.php" method="get">
+  <form action="includes/calc.ini.php" method="get">
     <label for="">1st Number</label><br>
     <input type="number" name="1st-entry" placeholder="First Number" > <br>
     <label for="">Operation</label><br>
+
     <select name="operation">
       <option value="Addition">Addition</option>
       <option value="Subtraction">Subtraction</option>
