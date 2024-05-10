@@ -16,10 +16,10 @@
     <input type="number" name="1st-entry" placeholder="First Number" > <br>
     <label for="">Operation</label><br>
     <select name="operation">
-      <option value="add">Addition</option>
-      <option value="minus">Subtraction</option>
-      <option value="times">Multiplication</option>
-      <option value="divide">Division</option>
+      <option value="Addition">Addition</option>
+      <option value="Subtraction">Subtraction</option>
+      <option value="Multiplication">Multiplication</option>
+      <option value="Division">Division</option>
     </select>
     <br>
 
