@@ -23,13 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pdo = null;
     $stmt = null;
 
-    header('Location: ../loginForm.php');
+    header('Location: ../demo/register.php');
 
     die();
 
   } catch (PDOException $e) {
     die("Query Failed. " . $e->getMessage());
   }
-} else {
-  header('Location: ../loginForm.php');
+} elseif ($_SERVER['REQUEST_METHOD'] == "/login-form.php") {
+  header('Location: ../demo/login-form.php');
+}
+ else {
+  header('Location: ../demo/register.php');
 }
