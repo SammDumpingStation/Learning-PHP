@@ -1,6 +1,6 @@
 <?php
   declare(strict_types=1);
-  include('includes/class-autoload.inc.php');
+  include('../includes/class-autoload.inc.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/logIn-general.css">
-  <link rel="stylesheet" href="/css/logIn-main.css">
+  <link rel="stylesheet" href="../css/logIn-general.css">
+  <link rel="stylesheet" href="../css/logIn-main.css">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
   <main>
     <div id="black-circle"></div>
 
-    <form action="/includes/formhandler.inc.php" method="post">
+    <form action="../includes/formhandler.inc.php" method="post">
       <h1>PHP & MYSQL V-01</h1>
 
       <section id="login-body">
