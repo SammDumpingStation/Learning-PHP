@@ -1,5 +1,20 @@
 <?php
+try {
+    require_once "../includes/dbh.inc.php"; // Make sure the path is correct
 
+    $query = "SELECT * FROM comments ORDER BY username";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $pdo = null;
+    $stmt = null;
+
+} catch (PDOException $e) {
+    die("Query Failed. " . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,28 +37,36 @@
         </div>
       <button id="search-button">Search</button>
     </form>
-    
-    <section class="posts">
-      <h2>Samm Caagbay</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates odio rerum magnam doloremque harum! Officiis maiores ab quibusdam quidem sunt blanditiis! Enim aliquam vero dignissimos nemo alias pariatur qui autem.</p>
-      <div class="operations">
 
-        <div class="options">
-          <img src="/icons/like.png" alt="">
-          <label for="">Like</label>
-        </div>
+    <section class="results">
+      <?php if (empty($results)) { ?>
+              <p>Database Connection Failed!</p>
+      <?php } else {?>
+              <?php foreach ($results as $value) { ?>
+                    <section class="posts">
+                        <h2><?php echo htmlspecialchars($value['username']);?></h2>
+                        <p><?php echo htmlspecialchars($value['comment_text']);?></p>
+                        <div class="operations">
 
-        <div class="options">
-          <img src="/icons/edit(1).png" alt="">
-          <label for="">Edit</label>
-        </div>
+                          <div class="options">
+                            <img src="/icons/like.png" alt="">
+                            <label for="">Like</label>
+                          </div>
 
-        <div class="options">
-          <img src="/icons/delete.png" alt="">
-          <label for="">Delete</label>
-        </div>
+                          <div class="options">
+                            <img src="/icons/edit(1).png" alt="">
+                            <label for="">Edit</label>
+                          </div>
 
-      </div>
+                          <div class="options">
+                            <img src="/icons/delete.png" alt="">
+                            <label for="">Delete</label>
+                          </div>
+
+                        </div>
+                      </section>
+               <?php } ?>
+      <?php }?>  
     </section>
   </main>
 </body>
