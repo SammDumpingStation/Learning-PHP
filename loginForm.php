@@ -16,14 +16,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/x-icon" href="/images/laravel.svg">
-  <title>Laravel-V01</title>
+  <title>PHP AND MYSQL V-01</title>
 </head>
 <body>
   <main>
     <div id="black-circle"></div>
 
     <form action="/includes/formhandler.inc.php" method="post">
-      <h1>LARAVEL V-01</h1>
+      <h1>PHP & MYSQL V-01</h1>
 
       <section id="login-body">
         <div class="input-field">
@@ -36,8 +36,13 @@
           <input type="password" name="password" class="input" placeholder="Password">
         </div>
 
-        <input type="submit" value="LOGIN" id="login-button">
-        <p>Don't have an account? <a href="" id="link">Sign-up</a> </p>
+        <div class="input-field">
+          <label for="">Email</label>
+          <input type="text" name="email" class="input" placeholder="Email">
+        </div>
+
+        <input type="submit" value="REGISTER" id="login-button">
+        <p>Already have an account? <a href="" id="link">Log-in</a> </p>
       </section>
     </form>    
   </main>
