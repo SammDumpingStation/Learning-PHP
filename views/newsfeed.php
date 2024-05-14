@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +12,17 @@
   <title>News Feed</title>
 </head>
 <body>
-  <nav>
-    <form id="search-section" action="newsfeed.php" method="post">
-      <div id="search-bar">
-        <img src="../icons/icons8-search.svg" alt="search-icon" id="search-icon">
-        <input type="text" name="searchbar" id="search-input" placeholder="Search....">
-      </div>
-    <button id="search-button">Search</button>
-  </form>
-  </nav>
 
   <main>
+
+    <form id="search-section" action="search.php" method="post">
+        <div id="search-bar">
+          <img src="../icons/icons8-search.svg" alt="search-icon" id="search-icon">
+          <input type="text" name="usersearch" id="search-input" placeholder="Search....">
+        </div>
+      <button id="search-button">Search</button>
+    </form>
+    
     <section class="posts">
       <h2>Samm Caagbay</h2>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates odio rerum magnam doloremque harum! Officiis maiores ab quibusdam quidem sunt blanditiis! Enim aliquam vero dignissimos nemo alias pariatur qui autem.</p>
@@ -38,7 +42,7 @@
           <img src="/icons/delete.png" alt="">
           <label for="">Delete</label>
         </div>
-        
+
       </div>
     </section>
   </main>

@@ -1,1 +1,1 @@
-SELECT * FROM users ORDER BY id DESC LIMIT 10;
+SELECT * FROM users;
