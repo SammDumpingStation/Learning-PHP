@@ -110,3 +110,14 @@ main {
 .options img {
   max-width: 20px;
 }
+
+#go-back {
+  margin-top: 50px;
+  border: none;
+  background-color: var(--main-black);
+  color: var(--main-color);
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  cursor: pointer;
+}

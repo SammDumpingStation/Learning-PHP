@@ -1,31 +1,4 @@
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $usersearch = $_POST['usersearch'];
-
-  try {
-    require_once "../includes/dbh.inc.php";
-
-    $query = "SELECT * FROM comments WHERE username = :usersearch;";
-
-    $stmt = $pdo->prepare($query);
-
-    $stmt->bindParam(":usersearch", $usersearch);
-
-    $stmt->execute();
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $pdo = null;
-    $stmt = null;
-
-  } catch (PDOException $e) {
-    die("Query Failed. " . $e->getMessage());
-  }
-}
- else {
-  header('Location: ../views/newsfeed.php');
-}
+<?php include("../includes/newsfeed.inc.php");
 ?>
 
 <!DOCTYPE html>
@@ -60,20 +33,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <p><?php echo htmlspecialchars($value['comment_text']);?></p>
                         <div class="operations">
 
-                          <div class="options">
+                          <form action="" class="options">
                             <img src="/icons/like.png" alt="">
+                            <input type="hidden" name="like" value="<?php $value['id']?>" id="">
                             <label for="">Like</label>
-                          </div>
+                          </form>
 
-                          <div class="options">
+                          <form action="../includes/update.inc.php" class="options">
                             <img src="/icons/edit(1).png" alt="">
-                            <label for="">Edit</label>
-                          </div>
+                            <input type="hidden" name="update" value="<?php $value['id']?>" id="">
+                            <label for="">Update</label>
+                          </form>
 
-                          <div class="options">
+                          <form action="../includes/delete.inc.php" class="options">
                             <img src="/icons/delete.png" alt="">
+                            <input type="hidden" name="delete" value="<?php $value['id']?>" id="">
                             <label for="">Delete</label>
-                          </div>
+                          </form>
 
                         </div>
                       </section>
