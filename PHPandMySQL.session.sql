@@ -1,1 +1,1 @@
-SELECT * FROM comments;
+SELECT COUNT(*) FROM comments;
