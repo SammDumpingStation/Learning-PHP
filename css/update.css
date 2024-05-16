@@ -1,0 +1,48 @@
+section {
+  background-color: white;
+  width: 60%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#edit-post {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+h1 {
+  align-self: flex-start;
+}
+
+#edit-input {
+  width: 100%;
+  max-width: 100%;
+  min-height: 250px;
+  resize: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-block: 20px;
+  font-family: inherit; 
+  font-size: inherit; 
+  line-height: inherit;
+}
+
+#edit-input:focus-visible {
+  outline: none;
+}
+
+#save {
+  padding: 10px 20px;
+  border: 1px solid var(--main-black);
+  background-color: transparent;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#save:hover {
+  background-color: var(--main-black);
+  color: var(--main-color);
+}

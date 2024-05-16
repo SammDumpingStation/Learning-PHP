@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $deleteID = $_POST['deleteID'];
+  $deleteID = $_POST['delete-id'];
 
   try {
     require_once "../includes/dbh.inc.php";

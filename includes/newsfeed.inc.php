@@ -1,17 +1,10 @@
 <?php
+try {
+    require_once "../includes/dbh.inc.php"; // Make sure the path is correct
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $usersearch = $_POST['usersearch'];
-
-  try {
-    require_once "../includes/dbh.inc.php";
-
-    $query = "SELECT * FROM comments WHERE username = :usersearch;";
+    $query = "SELECT * FROM comments ORDER BY username";
 
     $stmt = $pdo->prepare($query);
-
-    $stmt->bindParam(":usersearch", $usersearch);
-
     $stmt->execute();
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -19,10 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pdo = null;
     $stmt = null;
 
-  } catch (PDOException $e) {
+} catch (PDOException $e) {
     die("Query Failed. " . $e->getMessage());
-  }
-}
- else {
-  header('Location: ../views/newsfeed.php');
 }

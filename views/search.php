@@ -1,4 +1,4 @@
-<?php include("../includes/newsfeed.inc.php");
+<?php include("../includes/search-user.inc.php");
 ?>
 
 <!DOCTYPE html>
@@ -6,23 +6,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/logIn-general.css">
-  <link rel="stylesheet" href="../css/search.css">
+  <?php include('css-meta-tag.php')?>
   <title>News Feed</title>
 </head>
 <body>
 
   <main>
 
-    <form id="search-section" action="search.php" method="post">
-        <div id="search-bar">
-          <img src="../icons/icons8-search.svg" alt="search-icon" id="search-icon">
-          <input type="text" name="usersearch" id="search-input" placeholder="Search....">
-        </div>
-      <button id="search-button">Search</button>
-    </form>
+    <?php include('search-bar.php')?>
 
-    <H1 for="">Search Results:</H1>
+    <h1 for="">Search Results:</h1>
     <section class="results">
       <?php if (empty($results)) { ?>
               <p>The User Doesn't Exist!!</p>

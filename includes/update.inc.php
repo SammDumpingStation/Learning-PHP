@@ -1,29 +1,29 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $usersearch = $_POST['usersearch'];
+  $updateID = $_POST['update-id'];
+  $updateComment = $_POST['update-comment'];
 
   try {
     require_once "../includes/dbh.inc.php";
 
-    $query = "SELECT * FROM comments WHERE username = :usersearch;";
-
+    $query = "UPDATE comments SET comment_text = :updateComment WHERE id = :updateID;";
     $stmt = $pdo->prepare($query);
 
-    $stmt->bindParam(":usersearch", $usersearch);
+    $stmt->bindParam(":updateComment", $updateComment);
+    $stmt->bindParam(":updateID", $updateID);
 
     $stmt->execute();
 
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $pdo = null;
-    $stmt = null;
+    // Redirect back to the newsfeed or another page after deletion
+    header('Location: ../views/newsfeed.php');
+    exit();
 
   } catch (PDOException $e) {
     die("Query Failed. " . $e->getMessage());
   }
-}
- else {
+} else {
   header('Location: ../views/newsfeed.php');
+  exit();
 }
 ?>

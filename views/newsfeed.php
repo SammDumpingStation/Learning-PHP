@@ -1,20 +1,5 @@
 <?php
-try {
-    require_once "../includes/dbh.inc.php"; // Make sure the path is correct
-
-    $query = "SELECT * FROM comments ORDER BY username";
-
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $pdo = null;
-    $stmt = null;
-
-} catch (PDOException $e) {
-    die("Query Failed. " . $e->getMessage());
-}
+ include('../includes/newsfeed.inc.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,21 +7,14 @@ try {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/logIn-general.css">
-  <link rel="stylesheet" href="../css/search.css">
+  <?php include('css-meta-tag.php')?>
   <title>News Feed</title>
 </head>
 <body>
 
   <main>
 
-    <form id="search-section" action="search.php" method="post">
-        <div id="search-bar">
-          <img src="../icons/icons8-search.svg" alt="search-icon" id="search-icon">
-          <input type="text" name="usersearch" id="search-input" placeholder="Search....">
-        </div>
-      <button id="search-button">Search</button>
-    </form>
+    <?php include('search-bar.php')?>
 
     <section class="results">
       <?php if (empty($results)) { ?>
@@ -46,24 +24,33 @@ try {
                     <section class="posts">
                         <h2><?php echo htmlspecialchars($value['username']);?></h2>
                         <p><?php echo htmlspecialchars($value['comment_text']);?></p>
-                        <div class="operations">
+                      <div class="operations">
+                        <form action="" class="options" method="post">
+                            <button class="feed-button">
+                                <img src="/icons/like.png" alt="">
+                                <input type="hidden" name="likeID" value="<?php echo $value['id'] ?>" id="">
+                                Like
+                            </button>
+                        </form>
 
-                          <div class="options">
-                            <img src="/icons/like.png" alt="">
-                            <label for="">Like</label>
-                          </div>
+                        <form action="update-user.php" class="options" method="post">
+                            <button class="feed-button">
+                                <img src="/icons/edit(1).png" alt="">
+                                <input type="hidden" name="update-id" value="<?php echo $value['id'] ?>" id="">
+                                <input type="hidden" name="update-comment" value="<?php echo $value['comment_text'] ?>" id="">
+                                <input type="hidden" name="update-name" value="<?php echo $value['username'] ?>" id="">
+                                Edit
+                            </button>
+                        </form>
 
-                          <div class="options">
-                            <img src="/icons/edit(1).png" alt="">
-                            <label for="">Edit</label>
-                          </div>
-
-                          <div class="options">
-                            <img src="/icons/delete.png" alt="">
-                            <label for="">Delete</label>
-                          </div>
-
-                        </div>
+                        <form action="../includes/delete.inc.php" class="options" method="post">
+                            <button type="submit" class="feed-button">
+                                <img src="/icons/delete.png" alt="">
+                                <input type="hidden" name="delete-id" value="<?php echo $value['id'] ?>" id="">
+                                Delete
+                            </button>
+                        </form>
+                      </div>
                       </section>
                <?php } ?>
       <?php }?>  
