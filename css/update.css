@@ -53,7 +53,7 @@ section {
   width: 100%;
 }
 
-#save, #cancel {
+#save, #cancel-link {
   padding: 10px 20px;
   width: fit-content;
   flex-basis: 100%;
@@ -63,13 +63,21 @@ section {
   transition: background-color 0.3s, color 0.3s;
 }
 
-#cancel {
+#cancel-button {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: inherit;
+  margin: 0 auto;
+}
+
+#cancel-link {
   background-color: red;
   border: 1px solid red;
   color: var(--main-color);  
 }
 
-#cancel:hover {
+#cancel-link:hover {
   background-color: transparent;
   color: var(--main-black);
 }

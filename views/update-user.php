@@ -9,7 +9,11 @@
 </head>
 <body>
   <main>
-    <?php include('search-bar.php')?>
+
+    <?php 
+      include('../includes/search-bar.inc.php');
+      include('../includes/add-user.inc.php');
+    ?>
 
     <section>
       <form action="../includes/update.inc.php" method="post" id="edit-post">
@@ -21,9 +25,7 @@
         <input type="hidden" name="update-id" value="<?php echo $_POST['update-id'] ?>" id="">
 
         <div class="bottom-section">
-            <form action="newsfeed.php" method="post">
-              <button type="submit" id="cancel">Cancel</button>
-            </form>
+            <a href="newsfeed.php" id="cancel-link"><button type="button" id="cancel-button">Cancel</button></a>
             <button type="submit" id="save">Save Changes</button>          
         </div>
 

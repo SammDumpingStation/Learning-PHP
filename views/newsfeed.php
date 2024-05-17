@@ -15,11 +15,9 @@
   <main>
 
     <?php 
-      include('search-bar.php');
+      include('../includes/search-bar.inc.php');
       include('../includes/add-user.inc.php');
     ?>
-
-
 
     <section class="results">
       <?php if (empty($results)) { ?>

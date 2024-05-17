@@ -40,7 +40,7 @@ main {
   z-index: 1;
 }
 
-#search-input:focus {
+#search-input:focus-visible {
   outline: none;
 }
 
@@ -91,6 +91,7 @@ main {
   align-items: center;
   gap: 15px;
   width: 100%;
+  transition: all 0.3s;
 }
 
 .options > * {

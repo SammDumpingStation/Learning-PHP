@@ -13,7 +13,10 @@
 
   <main>
 
-    <?php include('search-bar.php')?>
+    <?php 
+      include('../includes/search-bar.inc.php');
+      include('../includes/add-user.inc.php');
+    ?>
 
     <h1 for="">Search Results:</h1>
     <section class="results">
