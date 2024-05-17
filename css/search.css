@@ -58,6 +58,8 @@ main {
   cursor: pointer;
 }
 
+
+
 .posts, .results {
   background-color: white;
   display: flex;

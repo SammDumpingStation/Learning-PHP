@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php include('../includes/css-meta-tag.php')?>
+  <?php include('../includes/css.inc.php')?>
   <title>News Feed</title>
 </head>
 <body>
@@ -18,6 +18,12 @@
       include('../includes/search-bar.inc.php');
       include('../includes/add-user.inc.php');
     ?>
+
+    <section class="sort">
+      <h1>Sort Users By:</h1>
+      <button>Alphabetical Order</button>
+      <button>Recently added</button>
+    </section>
 
     <section class="results">
       <?php if (empty($results)) { ?>
