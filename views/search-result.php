@@ -47,7 +47,7 @@
                         </form>
 
                         <form action="../includes/delete.inc.php" class="options" method="post">
-                            <button type="submit" class="feed-button">
+                            <button type="submit" class="feed-button" onclick="javascript:return confirm('Are you sure you want to delete this comment?')">
                                 <img src="/icons/delete.png" alt="">
                                 <input type="hidden" name="delete-id" value="<?php echo $value['id'] ?>" id="">
                                 Delete
