@@ -15,6 +15,7 @@
     ?>
 
     <section>
+      <h1>Add A New User</h1>
       <form action="../includes/insert.inc.php" method="post" id="edit-post">
         <div class="top-section">
           <label for="">Make a New Username</label>
