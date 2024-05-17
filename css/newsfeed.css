@@ -6,59 +6,14 @@ main {
   flex-direction: column;
   align-items: center;
   width: 70%;
-  padding-top: 70px;
+  margin-top: 100px;
   color: black;
 }
 
-#search-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 10px;
-  width: 100%;
-  gap: 35px;
+.sort {
+  width: 65%;
+  margin-bottom: 50px;
 }
-
-#search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border: 1px solid var(--main-color);
-  padding: 10px 20px;
-  border-radius: 20px;
-  gap: 10px;
-  width: 35%;
-}
-
-#search-input {
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  width: 100%;
-  z-index: 1;
-}
-
-#search-input:focus-visible {
-  outline: none;
-}
-
-#search-icon{
-  max-width: 20px;
-}
-
-#search-button {
-  border: none;
-  background-color: var(--main-black);
-  padding: 10px 20px;
-  color: var(--main-color);
-  border-radius: 20px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-
 
 .posts, .results {
   background-color: white;

@@ -21,7 +21,7 @@
 
     <section class="sort">
       <h1>Sort Users By:</h1>
-      <button>Alphabetical Order</button>
+      <button >Alphabetical Order</button>
       <button>Recently added</button>
     </section>
 
