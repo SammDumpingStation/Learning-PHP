@@ -25,10 +25,10 @@ main {
 }
 
 .sort-buttons button {
-  border: 1px solid var(--main-black);
+  border:none;
   padding: 10px 20px;
-  border-radius: 20px;
-  background-color: transparent;
+  border-radius: 10px;
+  background-color: white;
   transition: all 0.3s;
 }
 
