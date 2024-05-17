@@ -1,5 +1,4 @@
-<?php
- include('../includes/newsfeed.inc.php');
+<?php include("../includes/search-user.inc.php");
 ?>
 
 <!DOCTYPE html>
@@ -14,16 +13,12 @@
 
   <main>
 
-    <?php 
-      include('search-bar.php');
-      include('../includes/add-user.inc.php');
-    ?>
+    <?php include('search-bar.php')?>
 
-
-
+    <h1 for="">Search Results:</h1>
     <section class="results">
       <?php if (empty($results)) { ?>
-              <p>Database Connection Failed!</p>
+              <p>The User Doesn't Exist!!</p>
       <?php } else {?>
               <?php foreach ($results as $value) { ?>
                     <section class="posts">
@@ -60,6 +55,10 @@
                <?php } ?>
       <?php }?>  
     </section>
+    <form action="newsfeed.php" method="post">
+      <button id="go-back">Go Back</button>
+    </form>
+
   </main>
 </body>
 </html>

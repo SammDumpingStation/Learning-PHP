@@ -12,8 +12,21 @@ section {
   align-items: center;
 }
 
-h1 {
-  align-self: flex-start;
+.top-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#reset {
+  background-color: transparent;
+  border: none;
+  max-width: 30px;
+}
+
+.reset-icon {
+  width: 100%;
 }
 
 #edit-input {
@@ -34,15 +47,36 @@ h1 {
   outline: none;
 }
 
-#save {
+.bottom-section {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+#save, #cancel {
   padding: 10px 20px;
-  border: 1px solid var(--main-black);
+  width: fit-content;
+  flex-basis: 100%;
   background-color: transparent;
   border-radius: 20px;
+  border: none;
   transition: background-color 0.3s, color 0.3s;
+}
+
+#cancel {
+  background-color: red;
+  border: 1px solid red;
+  color: var(--main-color);  
+}
+
+#cancel:hover {
+  background-color: transparent;
+  color: var(--main-black);
 }
 
 #save:hover {
   background-color: var(--main-black);
   color: var(--main-color);
 }
+
+

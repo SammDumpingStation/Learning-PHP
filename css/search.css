@@ -123,11 +123,17 @@ main {
 
 #go-back {
   margin-top: 50px;
-  border: none;
-  background-color: var(--main-black);
-  color: var(--main-color);
+  color: var(--main-black);
   padding: 10px 20px;
   font-size: 1.3rem;
-  border-radius: 20px;
   cursor: pointer;
+  border: 1px solid var(--main-black);
+  border-radius: 20px;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+#go-back:hover {
+  background-color: var(--main-black);
+  color: var(--main-color);
 }
