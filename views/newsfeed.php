@@ -1,5 +1,5 @@
 <?php
- include('../includes/newsfeed.inc.php');
+  include('../includes/newsfeed.inc.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +21,16 @@
 
     <section class="sort">
       <h1>Sort Users By:</h1>
-      <button >Alphabetical Order</button>
-      <button>Recently added</button>
+      <form action="../includes/sorting.inc.php" method="post" class="sort-buttons">
+        <button name="sort-options" value="alphabetical">Alphabetical Order</button>
+        <button name="sort-options" value="recently-added">Recently added</button>        
+      </form>
+
     </section>
 
     <section class="results">
       <?php if (empty($results)) { ?>
-              <p>Database Connection Failed!</p>
+              <p>No Users Added.</p>
       <?php } else {?>
               <?php foreach ($results as $value) { ?>
                     <section class="posts">

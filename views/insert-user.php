@@ -12,7 +12,6 @@
   <main>
     <?php 
       include('../includes/search-bar.inc.php');
-      include('../includes/add-user.inc.php');
     ?>
 
     <section>

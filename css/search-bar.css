@@ -38,12 +38,17 @@
 
 #search-button {
   border: none;
-  background-color: var(--main-black);
+  background-color: transparent;
+  color: var(--main-black);
+  border: 1px solid var(--main-black);
   padding: 10px 20px;
-  color: var(--main-color);
   border-radius: 20px;
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
-
+#search-button:hover {
+  background-color: var(--main-black);
+  color: var(--main-color);
+}

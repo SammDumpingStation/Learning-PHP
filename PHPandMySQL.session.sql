@@ -1,1 +1,1 @@
-SELECT * FROM comments;
+DELETE * FROM comments;

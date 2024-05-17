@@ -11,8 +11,30 @@ main {
 }
 
 .sort {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 65%;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 20px;
+  padding-left: 30px;
+}
+
+.sort-buttons button {
+  border: 1px solid var(--main-black);
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.sort-buttons button:hover {
+  color: var(--main-color);
+  background-color: var(--main-black);
 }
 
 .posts, .results {

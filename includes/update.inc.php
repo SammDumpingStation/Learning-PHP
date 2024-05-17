@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $stmt->execute();
 
-    // Redirect back to the newsfeed or another page after deletion
     header('Location: ../views/newsfeed.php');
     exit();
 

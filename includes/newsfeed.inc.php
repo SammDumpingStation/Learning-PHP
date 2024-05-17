@@ -1,8 +1,14 @@
 <?php
-try {
-    require_once "../includes/dbh.inc.php"; // Make sure the path is correct
+session_start();
 
-    $query = "SELECT * FROM comments ORDER BY username";
+try {
+    require_once "../includes/dbh.inc.php";
+
+    if (isset($_SESSION['query']) && !is_null($_SESSION['query'])) {
+        $query = $_SESSION['query'];
+    } else {
+        $query = "SELECT * FROM comments ORDER BY username LIMIT 10;";
+    }
 
     $stmt = $pdo->prepare($query);
     $stmt->execute();

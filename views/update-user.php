@@ -16,7 +16,6 @@
     ?>
 
     <section>
-      <h1>Edit Your Comment</h1>
       <form action="../includes/update.inc.php" method="post" id="edit-post">
         <div class="top-section">
           <h1><?php echo $_POST['update-name'] ?></h1>
