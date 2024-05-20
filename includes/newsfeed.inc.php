@@ -9,7 +9,7 @@ try {
     } else {
         $query = "SELECT * FROM comments ORDER BY username LIMIT 10;";
     }
-
+ 
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 

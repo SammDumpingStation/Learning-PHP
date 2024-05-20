@@ -1,6 +1,6 @@
 <?php
   declare(strict_types=1);
-  include('../classses/class-autoload.inc.php');
+  include('../includes/class-autoload.inc.php');
 ?>
 
 <!DOCTYPE html>

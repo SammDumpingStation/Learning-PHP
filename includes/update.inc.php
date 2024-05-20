@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   try {
     require_once "../includes/dbh.inc.php";
 
-    $query = "UPDATE comments SET comment_text = :updateComment WHERE id = :updateID;";
+     $query = "UPDATE comments SET comment_text = :updateComment WHERE id = :updateID;";
     $stmt = $pdo->prepare($query);
 
     $stmt->bindParam(":updateComment", $updateComment);
