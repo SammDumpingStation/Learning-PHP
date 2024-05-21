@@ -22,7 +22,7 @@
   <main>
     <div id="black-circle"></div>
 
-    <form action="" method="post">
+    <form action="includes/register.inc.php" method="post">
       <h1>PHP & MYSQL V-01</h1>
 
       <section id="login-body">
@@ -37,11 +37,16 @@
         </div>
 
         <div class="input-field">
+          <label for="">Repeat Password</label>
+          <input type="password" name="repeat-password" class="input" placeholder="Repeat Password">
+        </div>
+
+        <div class="input-field">
           <label for="">Email</label>
           <input type="text" name="email" class="input" placeholder="Email">
         </div>
 
-        <input type="submit" value="REGISTER" id="login-button">
+        <input type="submit" name="submit" value="REGISTER" id="login-button">
         <p>Already have an account? <a href="login-form.php" id="link">Log-in</a> </p>
       </section>
     </form>    

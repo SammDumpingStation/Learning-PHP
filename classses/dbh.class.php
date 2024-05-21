@@ -1,4 +1,5 @@
 <?php
+//SQL Database Connection Class
 class Dbh
 {
     private $host = 'localhost';

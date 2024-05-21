@@ -1,1 +1,6 @@
-SELECT * FROM comments;
+CREATE TABLE pwd (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  pwd VARCHAR(255) NOT NULL,
+  users_id VARCHAR(255) NOT NULL,
+  
+);
