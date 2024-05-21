@@ -17,6 +17,37 @@ class RegisterContr extends Register
         $this->email = $email;
     }
 
+    private function signUpUser()
+    {
+        if (!$this->emptyInput()) {
+            // echo "Empty Input!";
+            header('../views/register.php?error=emptyinput');
+            exit();
+        }
+        if (!$this->invalidUsername()) {
+            // echo "Invalid Username!";
+            header('../views/register.php?error=invalidusername');
+            exit();
+        }
+
+        if (!$this->invalidEmail()) {
+            // echo "Invalid Email!";
+            header('../views/register.php?error=invalidemail');
+            exit();
+        }
+        if (!$this->pwdMatch()) {
+            // echo "Passwords don't Match";
+            header('../views/register.php?error=passworddontmatch');
+            exit();
+        }
+        if (!$this->usernameEmailTaken()) {
+            // echo "Username or Email is already Taken!";
+            header('../views/register.php?error=alreadytakenusernameemail');
+            exit();
+        }
+        $this->setUser($this->username, $this->pwd,$this->email);
+    }
+
     //Empty Field Check (Wa gi sudlan ni user sa form)
     private function emptyInput()
     {
@@ -67,14 +98,15 @@ class RegisterContr extends Register
 
     //Checks if the email or username is already taken
 
-    private function usernameEmailTaken() {
-      $result = null;
-      if (!$this->checkUser($this->username, $this->email)) {
-        $result = false;
-      } else {
-        $result = true;
-      }
-      return $result;
+    private function usernameEmailTaken()
+    {
+        $result = null;
+        if (!$this->checkUser($this->username, $this->email)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
     }
 
 }

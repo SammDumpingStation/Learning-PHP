@@ -2,6 +2,10 @@
 //The "Model" Class
 class Register extends Dbh {
 
+  protected function setUser($username, $pwd, $email) {
+    
+  }
+
   protected function checkUser($username, $email) {
     //Query to the database
     $query = "SELECT username, email FROM users WHERE username = :username OR email = :email";
