@@ -1,8 +1,9 @@
 <?php
 
 //The "Controller" class
-class RegisterContr
+class RegisterContr extends Register
 {
+    //Methods that will store what we recieve from the register.inc.php file
     private $username;
     private $pwd;
     private $repeatpwd;
@@ -62,7 +63,18 @@ class RegisterContr
             $result = true;
         }
         return $result;
+    }
 
+    //Checks if the email or username is already taken
+
+    private function usernameEmailTaken() {
+      $result = null;
+      if (!$this->checkUser($this->username, $this->email)) {
+        $result = false;
+      } else {
+        $result = true;
+      }
+      return $result;
     }
 
 }

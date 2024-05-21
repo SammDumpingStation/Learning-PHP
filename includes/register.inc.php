@@ -1,5 +1,5 @@
 <?php
-
+//checks if the user has tapped on the submit button or just directly go into the signup itself
 if (isset($_POST['submit'])) {
   
   //Catch the user input
