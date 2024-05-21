@@ -9,6 +9,7 @@ class RegisterContr extends Register
     private $repeatpwd;
     private $email;
 
+    // Construct to assign the class properties
     public function __construct($username, $pwd, $repeatpwd, $email)
     {
         $this->username = $username;
@@ -17,35 +18,41 @@ class RegisterContr extends Register
         $this->email = $email;
     }
 
+    //Using the methods below to check on the errors, then after validating and ensuring there is no error, we will sign up the user/insert the user into the database
     private function signUpUser()
     {
+        //Checks if the input fields are empty
         if (!$this->emptyInput()) {
             // echo "Empty Input!";
             header('../views/register.php?error=emptyinput');
             exit();
         }
+        //Checks if the username is invalid
         if (!$this->invalidUsername()) {
             // echo "Invalid Username!";
             header('../views/register.php?error=invalidusername');
             exit();
         }
-
+        //Checks is the email is invalid
         if (!$this->invalidEmail()) {
             // echo "Invalid Email!";
             header('../views/register.php?error=invalidemail');
             exit();
         }
+        //Checks if the password match front the retyped password
         if (!$this->pwdMatch()) {
             // echo "Passwords don't Match";
             header('../views/register.php?error=passworddontmatch');
             exit();
         }
+        //Checks if the username or email is taken
         if (!$this->usernameEmailTaken()) {
             // echo "Username or Email is already Taken!";
             header('../views/register.php?error=alreadytakenusernameemail');
             exit();
         }
-        $this->setUser($this->username, $this->pwd,$this->email);
+        //After all the validations, if the user passed it, then we will insert him/her into the database using the class from our model
+        $this->setUser($this->username, $this->pwd, $this->email);
     }
 
     //Empty Field Check (Wa gi sudlan ni user sa form)
