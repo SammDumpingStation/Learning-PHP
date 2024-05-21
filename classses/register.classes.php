@@ -7,14 +7,21 @@ class Register extends Dbh
     {
         //Query to the database
         $query = "INSERT INTO users (username, pwd, email) VALUES (:username, :pwd, :email);";
-
+        $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
         //Use prepared statement for security reasons
         $stmt = $this->connection()->prepare($query);
-        
+
         //Named parameters to assign the variables into the sql statement
         $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-        $stmt->bindParam(":pwd", $pwd, PDO::PARAM_STR);
+        $stmt->bindParam(":pwd", $hashedPwd, PDO::PARAM_STR);
         $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header('../views/register.php?error=stmtfailed');
+            exit();
+        }
+        $stmt = null;
 
     }
 
@@ -43,7 +50,7 @@ class Register extends Dbh
         } else {
             $resultCheck = true;
         }
-
+        $stmt = null;
         return $resultCheck;
     }
 }
