@@ -18,7 +18,7 @@ class Register extends Dbh
 
         if (!$stmt->execute()) {
             $stmt = null;
-            header('../views/register.php?error=stmtfailed');
+            header('Location: ../views/register.php?error=stmtfailed');
             exit();
         }
         $stmt = null;
@@ -39,7 +39,7 @@ class Register extends Dbh
         //Checks if the query has been executed, if not, it will not continue to run
         if (!$stmt->execute()) {
             $stmt = null;
-            header('../views/register.php?error=stmtfailed');
+            header('Location: ../views/register.php?error=stmtfailed');
             exit();
         }
 
