@@ -1,1 +1,1 @@
-SELECT * FROM users WHERE email = "sammcaag@gmail.com"; 
+SELECT * FROM users ORDER BY id DESC;

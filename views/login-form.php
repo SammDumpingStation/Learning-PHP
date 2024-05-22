@@ -22,7 +22,7 @@
   <main>
     <div id="black-circle"></div>
 
-    <form action="includes/login.inc.php" method="post">
+    <form action="../includes/login.inc.php" method="post">
       <h1>PHP & MYSQL V-01</h1>
 
       <section id="login-body">
@@ -36,7 +36,7 @@
           <input type="password" name="password" class="input" placeholder="Password">
         </div>
 
-        <input type="submit" name="submit" value="LOGIN" id="login-button">
+        <button type="submit" name="submit" id="login-button">LOGIN</button>
         <p>Don't have an account? <a href="register.php" id="link">Register</a> </p>
       </section>
     </form>    
